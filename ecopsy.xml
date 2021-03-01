@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.0.2
+- https://www.phpmyadmin.net
+-
+- Хост: 127.0.0.1:3306
+- Время создания: Мар 01 2021 г., 16:30
+- Версия сервера: 5.6.47
+- Версия PHP: 7.1.33
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="ecopsy" collation="utf8mb4_unicode_ci" charset="utf8mb4">
+            <pma:table name="articles">
+                CREATE TABLE `articles` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `html_href` varchar(511) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `img` varchar(511) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `date` date NOT NULL,
+                  `categorie` int(11) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="categorie">
+                CREATE TABLE `categorie` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="feedback">
+                CREATE TABLE `feedback` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `tel` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `surname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="footer_nav">
+                CREATE TABLE `footer_nav` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `RUS` varchar(511) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `ENG` varchar(511) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `parant_id` int(11) NOT NULL DEFAULT '0',
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="header_menu_items">
+                CREATE TABLE `header_menu_items` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `RUS` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `ENG` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `id_html` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `parant` int(11) NOT NULL DEFAULT '0',
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="menu__lists">
+                CREATE TABLE `menu__lists` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `RUS` varchar(511) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `ENG` varchar(511) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `html_class` varchar(511) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `parant_id` int(11) NOT NULL DEFAULT '0',
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="solutions">
+                CREATE TABLE `solutions` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `title` varchar(511) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `parant_id` int(11) NOT NULL DEFAULT '0',
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="users">
+                CREATE TABLE `users` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `login` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `password` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - База данных: 'ecopsy'
+    -->
+    <database name="ecopsy">
+        <!-- Таблица articles -->
+        <table name="articles">
+            <column name="id">1</column>
+            <column name="html_href"></column>
+            <column name="title">Культурная эволюция2</column>
+            <column name="text">Российские и зарубежные компании ценят в менеджерах совершенно разные качества</column>
+            <column name="img">./i/c/cards/12.jpg</column>
+            <column name="date">2021-02-28</column>
+            <column name="categorie">1</column>
+        </table>
+        <table name="articles">
+            <column name="id">2</column>
+            <column name="html_href"></column>
+            <column name="title">Switch — тесты способностей нового поколения</column>
+            <column name="text">Российские и зарубежные компании ценят в менеджерах совершенно разные качества</column>
+            <column name="img">./i/c/cards/12.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">1</column>
+        </table>
+        <table name="articles">
+            <column name="id">3</column>
+            <column name="html_href"></column>
+            <column name="title">Меньше временных затрат — больше результат: как сократить трудоемкось работы с отчетностью. Методика TIME</column>
+            <column name="text">Российские и зарубежные компании ценят в менеджерах совершенно разные качества</column>
+            <column name="img">./i/c/cards/13.jpg</column>
+            <column name="date">2021-02-22</column>
+            <column name="categorie">3</column>
+        </table>
+        <table name="articles">
+            <column name="id">4</column>
+            <column name="html_href"></column>
+            <column name="title">Культурная эвол</column>
+            <column name="text">Российские и зарубежные компании ценят в менеджерах совершенно разные качества</column>
+            <column name="img">./i/c/cards/13.jpg</column>
+            <column name="date">2021-02-03</column>
+            <column name="categorie">3</column>
+        </table>
+        <table name="articles">
+            <column name="id">5</column>
+            <column name="html_href"></column>
+            <column name="title">Edit</column>
+            <column name="text">Some</column>
+            <column name="img">icservices-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">6</column>
+            <column name="html_href"></column>
+            <column name="title"></column>
+            <column name="text"></column>
+            <column name="img">icservices-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">7</column>
+            <column name="html_href"></column>
+            <column name="title"></column>
+            <column name="text"></column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">8</column>
+            <column name="html_href"></column>
+            <column name="title"></column>
+            <column name="text"></column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">9</column>
+            <column name="html_href"></column>
+            <column name="title"></column>
+            <column name="text"></column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">10</column>
+            <column name="html_href"></column>
+            <column name="title"></column>
+            <column name="text"></column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">11</column>
+            <column name="html_href"></column>
+            <column name="title"></column>
+            <column name="text"></column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">12</column>
+            <column name="html_href"></column>
+            <column name="title"></column>
+            <column name="text"></column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">13</column>
+            <column name="html_href"></column>
+            <column name="title">Статья из добавления статьи</column>
+            <column name="text"></column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">14</column>
+            <column name="html_href"></column>
+            <column name="title">Статья из добавления статьи1</column>
+            <column name="text"></column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">15</column>
+            <column name="html_href"></column>
+            <column name="title">Статья из добавления статьи12</column>
+            <column name="text"></column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">16</column>
+            <column name="html_href"></column>
+            <column name="title">Статья из добавления статьи12</column>
+            <column name="text"></column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">17</column>
+            <column name="html_href"></column>
+            <column name="title">Статья из добавления статьи12</column>
+            <column name="text"></column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">18</column>
+            <column name="html_href"></column>
+            <column name="title">фывафыва</column>
+            <column name="text"></column>
+            <column name="img">i/c/Operate.png</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">19</column>
+            <column name="html_href"></column>
+            <column name="title">фывафыва</column>
+            <column name="text"></column>
+            <column name="img">i/c/Operate.png</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">20</column>
+            <column name="html_href"></column>
+            <column name="title">фывафыва</column>
+            <column name="text"></column>
+            <column name="img">i/c/Operate.png</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">21</column>
+            <column name="html_href"></column>
+            <column name="title">Статья из добавления статьи12</column>
+            <column name="text">Текст статьи ии12рр</column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">22</column>
+            <column name="html_href"></column>
+            <column name="title">Статья из добавления статьи12</column>
+            <column name="text">Текст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи апо
+апоА. ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рраввввввввТекст статьи ии12рравввввввв</column>
+            <column name="img">i/c/services-video-bg.jpg</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">23</column>
+            <column name="html_href"></column>
+            <column name="title">Культурная эволюция</column>
+            <column name="text">Российские и зарубежные компании ценят в менеджерах совершенно разные качества</column>
+            <column name="img">i/c/</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <table name="articles">
+            <column name="id">24</column>
+            <column name="html_href"></column>
+            <column name="title">Культурная эволюция2</column>
+            <column name="text">Российские и зарубежные компании ценят в менеджерах совершенно разные качества</column>
+            <column name="img">i/c/</column>
+            <column name="date">0000-00-00</column>
+            <column name="categorie">0</column>
+        </table>
+        <!-- Таблица categorie -->
+        <table name="categorie">
+            <column name="id">1</column>
+            <column name="name">Описание подхода</column>
+        </table>
+        <table name="categorie">
+            <column name="id">2</column>
+            <column name="name">вебинар</column>
+        </table>
+        <table name="categorie">
+            <column name="id">3</column>
+            <column name="name">hrtimes</column>
+        </table>
+        <!-- Таблица feedback -->
+        <table name="feedback">
+            <column name="id">1</column>
+            <column name="email">asdf</column>
+            <column name="tel"></column>
+            <column name="name"></column>
+            <column name="surname"></column>
+            <column name="message"></column>
+        </table>
+        <table name="feedback">
+            <column name="id">2</column>
+            <column name="email">asdf@ms.ru</column>
+            <column name="tel">asdf</column>
+            <column name="name">asdf</column>
+            <column name="surname">asdf</column>
+            <column name="message">asdfasdfasdf</column>
+        </table>
+        <table name="feedback">
+            <column name="id">4</column>
+            <column name="email">sdfg@asd.rc</column>
+            <column name="tel">sdfg</column>
+            <column name="name">sdfg</column>
+            <column name="surname">sdfg</column>
+            <column name="message">sdfg</column>
+        </table>
+        <table name="feedback">
+            <column name="id">5</column>
+            <column name="email">sdfg@asd.rc</column>
+            <column name="tel">sdfg</column>
+            <column name="name">sdfg</column>
+            <column name="surname">sdfg</column>
+            <column name="message">sdfg</column>
+        </table>
+        <table name="feedback">
+            <column name="id">6</column>
+            <column name="email">test@asd.rc</column>
+            <column name="tel">sdfg</column>
+            <column name="name">sdfg</column>
+            <column name="surname">sdfg</column>
+            <column name="message">sdfg</column>
+        </table>
+        <table name="feedback">
+            <column name="id">7</column>
+            <column name="email">asdf@m.ru</column>
+            <column name="tel">asdf</column>
+            <column name="name">asdf</column>
+            <column name="surname">asdf</column>
+            <column name="message">test</column>
+        </table>
+        <table name="feedback">
+            <column name="id">8</column>
+            <column name="email">asdf@m.ru</column>
+            <column name="tel">asdf</column>
+            <column name="name">asdf</column>
+            <column name="surname">asdf</column>
+            <column name="message">test1</column>
+        </table>
+        <!-- Таблица footer_nav -->
+        <table name="footer_nav">
+            <column name="id">1</column>
+            <column name="RUS">Обучение и развитие людей</column>
+            <column name="ENG">http://localhost:3000/services-learning-first.html#container-4</column>
+            <column name="parant_id">0</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">2</column>
+            <column name="RUS">Оценка людей</column>
+            <column name="ENG"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">3</column>
+            <column name="RUS">Разработка HR-систем</column>
+            <column name="ENG"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">4</column>
+            <column name="RUS">Бизнес-консалтинг</column>
+            <column name="ENG"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">5</column>
+            <column name="RUS">SuccessFactors</column>
+            <column name="ENG"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">6</column>
+            <column name="RUS">Работа с мнениями и&amp;nbsp;отношениями людей </column>
+            <column name="ENG"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">7</column>
+            <column name="RUS">Инсайты</column>
+            <column name="ENG">insights.php</column>
+            <column name="parant_id">0</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">8</column>
+            <column name="RUS">Описание подхода</column>
+            <column name="ENG"></column>
+            <column name="parant_id">7</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">9</column>
+            <column name="RUS">Кейс</column>
+            <column name="ENG"></column>
+            <column name="parant_id">7</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">10</column>
+            <column name="RUS">Обзорная статья</column>
+            <column name="ENG"></column>
+            <column name="parant_id">7</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">11</column>
+            <column name="RUS">HRTimes</column>
+            <column name="ENG"></column>
+            <column name="parant_id">7</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">12</column>
+            <column name="RUS">О компании</column>
+            <column name="ENG"></column>
+            <column name="parant_id">0</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">13</column>
+            <column name="RUS">ЭКОПСИ. Цифры и факты</column>
+            <column name="ENG"></column>
+            <column name="parant_id">12</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">14</column>
+            <column name="RUS">Клиенты</column>
+            <column name="ENG"></column>
+            <column name="parant_id">12</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">15</column>
+            <column name="RUS">О компании</column>
+            <column name="ENG"></column>
+            <column name="parant_id">12</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">16</column>
+            <column name="RUS">Партнеры</column>
+            <column name="ENG"></column>
+            <column name="parant_id">12</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">17</column>
+            <column name="RUS">Управленческая команда</column>
+            <column name="ENG"></column>
+            <column name="parant_id">12</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">18</column>
+            <column name="RUS">Библиотека ЭКОПСИ</column>
+            <column name="ENG"></column>
+            <column name="parant_id">12</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">19</column>
+            <column name="RUS">Карьера</column>
+            <column name="ENG"></column>
+            <column name="parant_id">0</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">20</column>
+            <column name="RUS">Карьера в ЭКОПСИ</column>
+            <column name="ENG"></column>
+            <column name="parant_id">19</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">21</column>
+            <column name="RUS">Интервью с сотрудниками</column>
+            <column name="ENG"></column>
+            <column name="parant_id">19</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">22</column>
+            <column name="RUS">Как стать сотрудником</column>
+            <column name="ENG"></column>
+            <column name="parant_id">19</column>
+        </table>
+        <table name="footer_nav">
+            <column name="id">23</column>
+            <column name="RUS">Вакансии</column>
+            <column name="ENG"></column>
+            <column name="parant_id">19</column>
+        </table>
+        <!-- Таблица header_menu_items -->
+        <table name="header_menu_items">
+            <column name="id">1</column>
+            <column name="RUS">Услуги</column>
+            <column name="ENG">services-learning-first</column>
+            <column name="id_html">js-menu-services-btn</column>
+            <column name="parant">0</column>
+        </table>
+        <table name="header_menu_items">
+            <column name="id">2</column>
+            <column name="RUS">Инсайты</column>
+            <column name="ENG">insights</column>
+            <column name="id_html"></column>
+            <column name="parant">0</column>
+        </table>
+        <table name="header_menu_items">
+            <column name="id">3</column>
+            <column name="RUS">Мероприятия</column>
+            <column name="ENG">events</column>
+            <column name="id_html"></column>
+            <column name="parant">0</column>
+        </table>
+        <table name="header_menu_items">
+            <column name="id">4</column>
+            <column name="RUS">О компании</column>
+            <column name="ENG">about</column>
+            <column name="id_html"></column>
+            <column name="parant">0</column>
+        </table>
+        <table name="header_menu_items">
+            <column name="id">5</column>
+            <column name="RUS">Карьера</column>
+            <column name="ENG">career</column>
+            <column name="id_html"></column>
+            <column name="parant">0</column>
+        </table>
+        <table name="header_menu_items">
+            <column name="id">6</column>
+            <column name="RUS">Контакты</column>
+            <column name="ENG">contacts</column>
+            <column name="id_html"></column>
+            <column name="parant">0</column>
+        </table>
+        <!-- Таблица menu__lists -->
+        <table name="menu__lists">
+            <column name="id">1</column>
+            <column name="RUS">Система работы с персоналом</column>
+            <column name="ENG">services-opinions</column>
+            <column name="html_class">menu__list-title</column>
+            <column name="parant_id">0</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">2</column>
+            <column name="RUS">Бренд работодателя</column>
+            <column name="ENG"></column>
+            <column name="html_class"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">3</column>
+            <column name="RUS">Корпоративная культура</column>
+            <column name="ENG"></column>
+            <column name="html_class"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">4</column>
+            <column name="RUS">Вовлеченность</column>
+            <column name="ENG"></column>
+            <column name="html_class"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">5</column>
+            <column name="RUS">Промышленная безопасность</column>
+            <column name="ENG">services-security</column>
+            <column name="html_class"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">6</column>
+            <column name="RUS">Бренд работодателя</column>
+            <column name="ENG"></column>
+            <column name="html_class"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">7</column>
+            <column name="RUS">Системы управления персоналом</column>
+            <column name="ENG">services-learning-second</column>
+            <column name="html_class"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">8</column>
+            <column name="RUS">Автоматизация HR на базе SAP SuccessFactors</column>
+            <column name="ENG">services-success</column>
+            <column name="html_class"></column>
+            <column name="parant_id">1</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">9</column>
+            <column name="RUS">Система управления организацией</column>
+            <column name="ENG">services-systems</column>
+            <column name="html_class">menu__list-title</column>
+            <column name="parant_id">0</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">10</column>
+            <column name="RUS">Стретегия и организационное проектирование</column>
+            <column name="ENG"></column>
+            <column name="html_class"></column>
+            <column name="parant_id">9</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">11</column>
+            <column name="RUS">Операционная эффективность</column>
+            <column name="ENG"></column>
+            <column name="html_class"></column>
+            <column name="parant_id">9</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">12</column>
+            <column name="RUS">Практики регулярного менеджмента</column>
+            <column name="ENG"></column>
+            <column name="html_class"></column>
+            <column name="parant_id">9</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">13</column>
+            <column name="RUS">Люди</column>
+            <column name="ENG"></column>
+            <column name="html_class">menu__list-title</column>
+            <column name="parant_id">0</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">14</column>
+            <column name="RUS">Оценка персонала</column>
+            <column name="ENG">services-hr</column>
+            <column name="html_class"></column>
+            <column name="parant_id">13</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">15</column>
+            <column name="RUS">Обучение и развитие</column>
+            <column name="ENG">services-learning-first</column>
+            <column name="html_class"></column>
+            <column name="parant_id">13</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">16</column>
+            <column name="RUS">Работа с топ-менеджерами</column>
+            <column name="ENG"></column>
+            <column name="html_class"></column>
+            <column name="parant_id">13</column>
+        </table>
+        <table name="menu__lists">
+            <column name="id">47</column>
+            <column name="RUS">test2 3</column>
+            <column name="ENG">services-test2 3</column>
+            <column name="html_class"></column>
+            <column name="parant_id">13</column>
+        </table>
+        <!-- Таблица solutions -->
+        <table name="solutions">
+            <column name="id">1</column>
+            <column name="title">Система управления эффективностью/ переменной оплаты труда</column>
+            <column name="text">Опыт работы — один из самых очевидных критериев оценки при подборе. Около 80% вакансий содержат опыт как одно из базовых требований — в количестве лет или просто факт работы на похожей позиции (Chakrabarti, 2018). И есть такое же интуитивное ощущение, что это правильный критерий. Но нет ли здесь подмены понятий, когда под опытом работы мы подразумеваем релевантные навыки и знания? Насколько опыт работы действительно предсказывает успешность в работе? Для ответов на эти вопросы группа исследователей провела крупный метаанализ. </column>
+            <column name="parant_id">0</column>
+        </table>
+        <table name="solutions">
+            <column name="id">3</column>
+            <column name="title">Аудит промышленной безопасности</column>
+            <column name="text">2Аудит промышленной безопасности</column>
+            <column name="parant_id">5</column>
+        </table>
+        <table name="solutions">
+            <column name="id">4</column>
+            <column name="title">Управление промышленной безопасностью</column>
+            <column name="text">22Управление промышленной безопасностью</column>
+            <column name="parant_id">5</column>
+        </table>
+        <table name="solutions">
+            <column name="id">5</column>
+            <column name="title">Обучение по охране труда и культуре безопасности</column>
+            <column name="text">asasfОбучение по охране труда и культуре безопасности</column>
+            <column name="parant_id">5</column>
+        </table>
+        <table name="solutions">
+            <column name="id">6</column>
+            <column name="title">Xnjasdf</column>
+            <column name="text">asdfasdf</column>
+            <column name="parant_id">5</column>
+        </table>
+        <table name="solutions">
+            <column name="id">7</column>
+            <column name="title">7Аудит промышленной безопасности</column>
+            <column name="text">2Аудит промышленной безопасности</column>
+            <column name="parant_id">5</column>
+        </table>
+        <table name="solutions">
+            <column name="id">8</column>
+            <column name="title">8Управление промышленной безопасностью</column>
+            <column name="text">22Управление промышленной безопасностью</column>
+            <column name="parant_id">5</column>
+        </table>
+        <table name="solutions">
+            <column name="id">9</column>
+            <column name="title">9Обучение по охране труда и культуре безопасности</column>
+            <column name="text">asasfОбучение по охране труда и культуре безопасности</column>
+            <column name="parant_id">5</column>
+        </table>
+        <table name="solutions">
+            <column name="id">10</column>
+            <column name="title">10Xnjasdf</column>
+            <column name="text">asdfasdf</column>
+            <column name="parant_id">5</column>
+        </table>
+        <table name="solutions">
+            <column name="id">11</column>
+            <column name="title">Что-то</column>
+            <column name="text">111</column>
+            <column name="parant_id">15</column>
+        </table>
+        <!-- Таблица users -->
+        <table name="users">
+            <column name="id">1</column>
+            <column name="login">admin</column>
+            <column name="password">admin</column>
+        </table>
+    </database>
+</pma_xml_export>
